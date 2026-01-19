@@ -2,20 +2,19 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Création de sites web modernes | DelHyperWeb</title>
+<title>DelHyperWeb — Création de sites web premium</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
 <style>
 :root {
   --bg: #020617;
-  --bg2: #0f172a;
+  --bg-soft: #0f172a;
   --accent: #38bdf8;
-  --accent2: #22c55e;
-  --text: #e5e7eb;
-  --muted: #9ca3af;
+  --accent-2: #22c55e;
+  --white: #f8fafc;
+  --muted: #94a3b8;
 }
 
 * {
@@ -26,37 +25,40 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(180deg, var(--bg), var(--bg2));
-  color: var(--text);
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: var(--white);
+  overflow-x: hidden;
 }
 
-/* ---------- HEADER ---------- */
+/* ===== NAV ===== */
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 1000;
-  background: rgba(2, 6, 23, 0.85);
-  backdrop-filter: blur(10px);
+  width: 100%;
+  z-index: 999;
+  background: rgba(2,6,23,0.8);
+  backdrop-filter: blur(12px);
 }
 
 nav {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: auto;
-  padding: 15px 20px;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  font-weight: 800;
-  font-size: 1.2rem;
+  font-weight: 900;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
 }
 
 nav a {
-  margin-left: 20px;
+  margin-left: 25px;
   text-decoration: none;
-  color: var(--text);
+  color: var(--white);
   font-weight: 600;
   position: relative;
 }
@@ -64,8 +66,8 @@ nav a {
 nav a::after {
   content: "";
   position: absolute;
+  bottom: -6px;
   left: 0;
-  bottom: -5px;
   width: 0;
   height: 2px;
   background: var(--accent);
@@ -76,126 +78,173 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* ---------- HERO ---------- */
+/* ===== HERO ===== */
 .hero {
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 120px 20px 60px;
   text-align: center;
-  padding: 40px 20px;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  max-width: 900px;
-  margin-bottom: 20px;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  max-width: 1100px;
+  margin-bottom: 25px;
 }
 
-.hero span {
-  color: var(--accent);
+.hero h1 span {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .hero p {
-  max-width: 700px;
+  font-size: 1.25rem;
+  max-width: 750px;
   margin: auto;
-  font-size: 1.2rem;
   color: var(--muted);
 }
 
-.btn {
+.cta {
+  margin-top: 50px;
   display: inline-block;
-  margin-top: 35px;
-  padding: 14px 35px;
+  padding: 16px 40px;
+  border-radius: 60px;
   background: linear-gradient(135deg, var(--accent), #0ea5e9);
   color: #020617;
-  border-radius: 40px;
+  font-weight: 800;
   text-decoration: none;
-  font-weight: 700;
-  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 25px 80px rgba(56,189,248,0.45);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(56,189,248,0.4);
+.cta:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 35px 120px rgba(56,189,248,0.65);
 }
 
-/* ---------- SECTIONS ---------- */
+/* ===== SECTIONS ===== */
 .section {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: auto;
-  padding: 100px 20px;
+  padding: 140px 20px;
 }
 
 .section h2 {
-  font-size: 2.3rem;
+  font-size: 3rem;
   margin-bottom: 20px;
 }
 
 .section p {
+  max-width: 800px;
   color: var(--muted);
-  max-width: 700px;
+  font-size: 1.15rem;
 }
 
-/* ---------- CARDS ---------- */
+/* ===== CARDS ===== */
 .cards {
-  margin-top: 50px;
+  margin-top: 70px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 35px;
 }
 
 .card {
-  background: rgba(2,6,23,0.8);
-  border-radius: 20px;
-  padding: 30px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  background: linear-gradient(180deg, #020617, #020617cc);
+  padding: 40px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: transform 0.4s, box-shadow 0.4s;
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.7);
 }
 
 .card h3 {
-  color: var(--accent2);
+  color: var(--accent);
+  font-size: 1.4rem;
 }
 
-/* ---------- PROCESS ---------- */
-.steps {
+/* ===== TIMELINE ===== */
+.timeline {
+  margin-top: 80px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-  gap: 30px;
-  margin-top: 40px;
+  gap: 50px;
 }
 
 .step {
-  border-left: 3px solid var(--accent);
-  padding-left: 20px;
+  border-left: 4px solid var(--accent);
+  padding-left: 25px;
 }
 
-/* ---------- CONTACT ---------- */
+/* ===== PRICING ===== */
+.pricing {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.price {
+  background: linear-gradient(180deg, #020617, #020617dd);
+  border-radius: 35px;
+  padding: 45px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.price h3 {
+  font-size: 1.8rem;
+}
+
+.price span {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--accent);
+}
+
+/* ===== TESTIMONIALS ===== */
+.testimonials {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 35px;
+}
+
+.testimonial {
+  background: #020617;
+  border-radius: 30px;
+  padding: 35px;
+  font-style: italic;
+}
+
+/* ===== CONTACT ===== */
 .contact-box {
-  margin-top: 40px;
+  margin-top: 60px;
   background: linear-gradient(135deg, #020617, #020617);
-  border-radius: 25px;
-  padding: 50px;
+  padding: 70px;
+  border-radius: 40px;
   text-align: center;
+  box-shadow: 0 50px 120px rgba(0,0,0,0.7);
 }
 
-/* ---------- FOOTER ---------- */
+/* ===== FOOTER ===== */
 footer {
+  padding: 60px 20px;
   text-align: center;
-  padding: 40px;
   color: var(--muted);
-  font-size: 0.9rem;
 }
 
-/* ---------- ANIMATIONS ---------- */
+/* ===== ANIMATION ===== */
 .fade {
   opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
+  transform: translateY(50px);
+  transition: all 1s ease;
 }
 
 .fade.show {
@@ -212,7 +261,8 @@ footer {
     <div class="logo">⚡ DelHyperWeb</div>
     <div>
       <a href="#services">Services</a>
-      <a href="#process">Process</a>
+      <a href="#process">Méthode</a>
+      <a href="#pricing">Tarifs</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
@@ -220,72 +270,91 @@ footer {
 
 <section class="hero">
   <div>
-    <h1>Des <span>sites web modernes</span> qui donnent envie de te contacter</h1>
-    <p>Sites rapides, élégants, sans abonnement, mis en ligne immédiatement.</p>
-    <a href="#contact" class="btn">Lancer mon site 🚀</a>
+    <h1>Des <span>sites web premium</span> qui transforment les visiteurs en clients</h1>
+    <p>Design haut de gamme, vitesse extrême, aucune dépendance, aucun abonnement.</p>
+    <a href="#contact" class="cta">Démarrer mon projet</a>
   </div>
 </section>
 
 <section id="services" class="section fade">
-  <h2>🚀 Ce que je propose</h2>
+  <h2>Pourquoi DelHyperWeb ?</h2>
+  <p>Parce qu’un site web n’est pas juste une vitrine. C’est ton meilleur commercial.</p>
+
   <div class="cards">
     <div class="card">
-      <h3>Site vitrine</h3>
-      <p>Une page claire et impactante pour présenter ton activité.</p>
+      <h3>Design émotionnel</h3>
+      <p>Chaque pixel est pensé pour provoquer confiance et désir.</p>
     </div>
     <div class="card">
-      <h3>Design moderne</h3>
-      <p>Animations, effets, responsive mobile.</p>
+      <h3>Performance extrême</h3>
+      <p>Chargement instantané, zéro lourdeur, expérience fluide.</p>
     </div>
     <div class="card">
-      <h3>Paiement unique</h3>
-      <p>Aucun abonnement. Ton site t’appartient.</p>
+      <h3>100% propriétaire</h3>
+      <p>Pas d’abonnement, pas de piège. Ton site t’appartient.</p>
     </div>
   </div>
 </section>
 
 <section id="process" class="section fade">
-  <h2>⚙️ Comment ça marche</h2>
-  <div class="steps">
+  <h2>Une méthode simple et efficace</h2>
+  <div class="timeline">
     <div class="step">
-      <h3>1. Contact</h3>
-      <p>Tu m’expliques ton projet.</p>
+      <h3>1. Analyse</h3>
+      <p>Compréhension de ton activité et de tes clients.</p>
     </div>
     <div class="step">
-      <h3>2. Création</h3>
-      <p>Je crée ton site sous 24–48h.</p>
+      <h3>2. Design</h3>
+      <p>Création d’un univers visuel unique.</p>
     </div>
     <div class="step">
-      <h3>3. Mise en ligne</h3>
-      <p>Ton site est accessible immédiatement.</p>
+      <h3>3. Déploiement</h3>
+      <p>Mise en ligne rapide, sécurisée et optimisée.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="section fade">
+  <h2>Tarifs clairs</h2>
+  <div class="pricing">
+    <div class="price">
+      <h3>Essentiel</h3>
+      <span>€</span>
+      <p>Site vitrine simple & efficace</p>
+    </div>
+    <div class="price">
+      <h3>Premium</h3>
+      <span>€€</span>
+      <p>Design avancé & animations</p>
+    </div>
+    <div class="price">
+      <h3>Signature</h3>
+      <span>€€€</span>
+      <p>Expérience sur-mesure</p>
     </div>
   </div>
 </section>
 
 <section id="contact" class="section fade">
-  <h2>📩 Travaillons ensemble</h2>
+  <h2>Prêt à passer au niveau supérieur ?</h2>
   <div class="contact-box">
-    <p>Un projet ? Une idée ?</p>
-    <a class="btn" href="https://wa.me/33783367640">Me contacter sur WhatsApp</a>
+    <p>Discutons de ton projet dès aujourd’hui.</p>
+    <a class="cta" href="https://wa.me/33783367640">Me contacter sur WhatsApp</a>
   </div>
 </section>
 
 <footer>
-  © 2026 – DelHyperWeb • Sites web modernes
+  © 2026 — DelHyperWeb • Agence web premium
 </footer>
 
 <script>
-const fades = document.querySelectorAll('.fade');
-
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    }
+    if (entry.isIntersecting) entry.target.classList.add('show');
   });
 });
 
-fades.forEach(el => observer.observe(el));
+document.querySelectorAll('.fade').forEach(el => observer.observe(el));
 </script>
 
 </body>
