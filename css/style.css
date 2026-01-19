@@ -3,3 +3,18 @@ body {
   color: white;
   font-family: Arial, sans-serif;
 }
+/* Animation simple WOW */
+h1 {
+  animation: fadeUp 1.2s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
