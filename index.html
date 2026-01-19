@@ -2,22 +2,23 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>DelHyperWeb — Création de site web prmium sans abonnement</title>
+<title>DelHyperWeb — Agence Web </title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- =========================
-     FONTS
-========================= -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
-
 <style>
+/* ================== VARIABLES ================== */
+:root {
+  --bg-main: #020617;
+  --bg-alt: #0f172a;
+  --neon-blue: #38bdf8;
+  --neon-pink: #ec4899;
+  --neon-green: #22c55e;
+  --text-main: #e5e7eb;
+  --text-muted: #94a3b8;
+}
 
-/* ======================================================
-   RESET + BASE
-====================================================== */
-*,
-*::before,
-*::after {
+/* ================== RESET ================== */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -28,91 +29,55 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Segoe UI', system-ui, sans-serif;
   background: radial-gradient(circle at top, #020617, #000);
-  color: #e5e7eb;
+  color: var(--text-main);
   overflow-x: hidden;
 }
 
-/* ======================================================
-   VARIABLES
-====================================================== */
-:root {
-  --bg-main: #020617;
-  --bg-soft: #0f172a;
-  --neon-blue: #38bdf8;
-  --neon-green: #22c55e;
-  --neon-purple: #a78bfa;
-  --text-main: #e5e7eb;
-  --text-soft: #9ca3af;
-  --radius-xl: 28px;
-}
-
-/* ======================================================
-   SCROLLBAR
-====================================================== */
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: #020617;
-}
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(var(--neon-blue), var(--neon-purple));
-  border-radius: 20px;
-}
-
-/* ======================================================
-   HEADER / NAV
-====================================================== */
+/* ================== NAVBAR ================== */
 header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(2,6,23,0.75);
+  background: rgba(2,6,23,0.9);
   backdrop-filter: blur(14px);
-  z-index: 9999;
-  box-shadow: 0 0 40px rgba(56,189,248,0.15);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 nav {
-  max-width: 1400px;
+  max-width: 1300px;
   margin: auto;
-  padding: 18px 30px;
+  padding: 18px 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  font-size: 1.4rem;
-  font-weight: 900;
-  letter-spacing: 1px;
+  font-size: 1.6rem;
+  font-weight: 800;
   color: var(--neon-blue);
-  text-shadow: 0 0 15px rgba(56,189,248,0.8);
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 30px;
+  text-shadow: 0 0 25px var(--neon-blue);
 }
 
 nav a {
-  text-decoration: none;
+  margin-left: 25px;
   color: var(--text-main);
-  font-weight: 600;
+  text-decoration: none;
   position: relative;
+  font-weight: 500;
 }
 
 nav a::after {
   content: "";
   position: absolute;
-  left: 0;
   bottom: -6px;
+  left: 0;
   width: 0%;
   height: 2px;
-  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
   transition: 0.4s;
 }
 
@@ -120,204 +85,142 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* ======================================================
-   HERO
-====================================================== */
+/* ================== HERO ================== */
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 140px 20px 80px;
-  position: relative;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, rgba(56,189,248,0.15), transparent 70%);
-  animation: pulse 6s infinite;
-}
-
-.hero-content {
-  max-width: 900px;
   text-align: center;
-  position: relative;
-  z-index: 2;
-  animation: fadeUp 1.6s ease forwards;
+  padding: 140px 20px 80px;
 }
 
 .hero h1 {
-  font-size: clamp(3rem, 6vw, 4.8rem);
-  font-weight: 900;
-  line-height: 1.1;
-  margin-bottom: 30px;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 25px;
+  text-shadow: 0 0 30px var(--neon-blue);
 }
 
-.hero h1 span {
-  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 25px rgba(56,189,248,0.8);
+.hero span {
+  color: var(--neon-pink);
 }
 
 .hero p {
-  font-size: 1.25rem;
-  color: var(--text-soft);
-  margin-bottom: 50px;
+  max-width: 720px;
+  margin: auto;
+  font-size: 1.2rem;
+  color: var(--text-muted);
 }
 
-/* ======================================================
-   BUTTONS
-====================================================== */
 .btn {
-  padding: 16px 42px;
-  border-radius: 999px;
-  font-weight: 800;
-  text-decoration: none;
+  display: inline-block;
+  margin-top: 35px;
+  padding: 16px 40px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
   color: #020617;
-  background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
-  box-shadow: 0 0 25px rgba(56,189,248,0.8);
-  transition: all 0.35s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
-  transform: translateX(-100%);
-}
-
-.btn:hover::after {
-  animation: shine 1s;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 0 40px var(--neon-blue);
+  transition: transform 0.4s, box-shadow 0.4s;
 }
 
 .btn:hover {
-  transform: translateY(-6px) scale(1.05);
-  box-shadow: 0 0 50px rgba(167,139,250,1);
+  transform: scale(1.1);
+  box-shadow: 0 0 60px var(--neon-pink);
 }
 
-/* ======================================================
-   SECTIONS
-====================================================== */
-.section {
-  max-width: 1400px;
+/* ================== SECTIONS ================== */
+section {
+  max-width: 1300px;
   margin: auto;
-  padding: 140px 30px;
+  padding: 120px 25px;
 }
 
-.section h2 {
+section h2 {
   text-align: center;
   font-size: 2.6rem;
-  margin-bottom: 80px;
-  font-weight: 900;
+  margin-bottom: 60px;
+  color: var(--neon-blue);
+  text-shadow: 0 0 20px var(--neon-blue);
 }
 
-/* ======================================================
-   CARDS
-====================================================== */
+/* ================== CARDS ================== */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
+  gap: 30px;
 }
 
 .card {
-  background: linear-gradient(180deg, #020617, #020617cc);
-  padding: 45px;
-  border-radius: var(--radius-xl);
-  position: relative;
-  transition: all 0.4s ease;
-  box-shadow: inset 0 0 0 1px rgba(56,189,248,0.15);
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
-  opacity: 0;
-  transition: 0.4s;
-  z-index: -1;
-}
-
-.card:hover::before {
-  opacity: 1;
+  background: linear-gradient(180deg, #020617, #020617aa);
+  border-radius: 25px;
+  padding: 35px;
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 0 25px rgba(56,189,248,0.12);
+  transition: transform 0.5s, box-shadow 0.5s;
 }
 
 .card:hover {
-  transform: translateY(-16px);
-  box-shadow: 0 40px 80px rgba(0,0,0,0.7);
+  transform: translateY(-14px);
+  box-shadow: 0 0 55px rgba(236,72,153,0.45);
 }
 
 .card h3 {
+  color: var(--neon-pink);
   margin-bottom: 15px;
+}
+
+.card p {
+  color: var(--text-muted);
+}
+
+.price {
+  margin-top: 20px;
+  font-size: 2rem;
   color: var(--neon-green);
-  font-size: 1.3rem;
 }
 
-/* ======================================================
-   STATS
-====================================================== */
-.stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 50px;
+/* ================== SOCIAL PROOF ================== */
+.proof {
   text-align: center;
 }
 
-.stat {
-  font-size: 3rem;
-  font-weight: 900;
-  color: var(--neon-blue);
-  text-shadow: 0 0 25px rgba(56,189,248,0.8);
+.proof p {
+  max-width: 900px;
+  margin: auto;
+  font-size: 1.1rem;
+  color: var(--text-muted);
 }
 
-.stat-label {
-  margin-top: 10px;
-  color: var(--text-soft);
+/* ================== CONTACT ================== */
+.contact {
+  text-align: center;
 }
 
-/* ======================================================
-   FOOTER
-====================================================== */
+.contact .btn {
+  margin-top: 25px;
+}
+
+/* ================== FOOTER ================== */
 footer {
-  padding: 80px 20px;
   text-align: center;
-  color: var(--text-soft);
+  padding: 50px 20px;
   font-size: 0.9rem;
+  color: var(--text-muted);
 }
 
-/* ======================================================
-   ANIMATIONS
-====================================================== */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(80px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* ================== ANIMATIONS ================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
 }
 
-@keyframes pulse {
-  0%,100% { opacity: 0.4; }
-  50% { opacity: 0.8; }
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
-
-@keyframes shine {
-  to {
-    transform: translateX(100%);
-  }
-}
-
 </style>
 </head>
 
@@ -326,61 +229,96 @@ footer {
 <header>
   <nav>
     <div class="logo">DelHyperWeb</div>
-    <ul>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#stats">Résultats</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div>
+      <a href="#accueil">Accueil</a>
+      <a href="#offres">Offres</a>
+      <a href="#express">Express</a>
+      <a href="#preuves">Résultats</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
 </header>
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>Création de site web <span mis en ligne directement</span><br>sans abonnement</h1>
-    <p>Design premium, crédibilité maximale.</p>
-    <a href="#contact" class="btn">Démarrer mon projet</a>
+<section id="accueil" class="hero reveal">
+  <div>
+    <h1>Des sites <span>néon</span> qui attirent des clients</h1>
+    <p>
+      DelHyperWeb crée des sites web modernes, rapides et rentables.
+      Sans abonnement. Sans complications. Résultats immédiats.
+    </p>
+    <a href="#offres" class="btn">Voir les offres</a>
   </div>
 </section>
 
-<section id="services" class="section">
-  <h2>Services premium</h2>
+<section id="offres" class="reveal">
+  <h2>Offres principales</h2>
   <div class="cards">
-    <div class="card"><h3>Sites vitrines</h3><p>Présentez votre activité avec un site élégant, rapide et pensé pour inspirer confiance dès les premières secondes.</p></div>
-    <div class="card"><h3>Page d'acquisition</h3><p>Des pages stratégiques conçues pour capter l'attention, guider l'utilisateur et transformer les visiteurs en clients </p></div>
-    <div class="card"><h3>Image de marque digital</h3><p>Une identité visuelle cohérente et professsionnelle pour renforcer votre crédibilité et votrer positionnement</p></div>
-  </div>
-</section>
-
-<section id="stats" class="section">
-  <h2>Résultats</h2>
-  <div class="stats">
-    <div>
-      <div class="stat">+300%</div>
-      <div class="stat-label">Impact visuel</div>
+    <div class="card">
+      <h3>Page de conversion</h3>
+      <p>Une page optimisée pour transformer les visiteurs en clients.</p>
+      <div class="price">€+</div>
     </div>
-    <div>
-      <div class="stat">24h à 48h</div>
-      <div class="stat-label">délai maximum</div>
+    <div class="card">
+      <h3>Site vitrine Essentiel</h3>
+      <p>Une présence professionnelle claire et efficace.</p>
+      <div class="price">€+</div>
     </div>
-    <div>
-      <div class="stat">100%</div>
-      <div class="stat-label">Satisfaction</div>
+    <div class="card">
+      <h3>Site vitrine Premium</h3>
+      <p>Design haut de gamme, animations avancées, impact maximal.</p>
+      <div class="price">€+</div>
     </div>
   </div>
 </section>
 
-<section id="contact" class="section">
+<section id="express" class="reveal">
+  <h2>Offres Express ⚡</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Site Express 48h</h3>
+      <p>Site professionnel livré en 48h, paiement unique.</p>
+      <div class="price">€</div>
+    </div>
+    <div class="card">
+      <h3>Refonte Express</h3>
+      <p>Modernisation rapide d’un site existant.</p>
+      <div class="price">€</div>
+    </div>
+  </div>
+</section>
+
+<section id="preuves" class="proof reveal">
+  <h2>Pourquoi DelHyperWeb ?</h2>
+  <p>
+    Design moderne, rapidité d’exécution, solutions rentables et accompagnement humain.
+    Chaque projet est pensé pour générer des contacts et renforcer votre image.
+  </p>
+</section>
+
+<section id="contact" class="contact reveal">
   <h2>Contact</h2>
-  <div style="text-align:center">
-    <a href="https://wa.me/33783367640" class="btn">WhatsApp</a>
-  </div>
+  <p>Un projet ? Une urgence ? Parlons-en.</p>
+  <a href="https://wa.me/33783367640" class="btn">WhatsApp direct</a>
 </section>
 
 <footer>
-  © 2026 — DelHyperWeb • Agence de création site web
+  © 2026 — DelHyperWeb • Agence web indépendante
 </footer>
+
+<script>
+/* SCROLL ANIMATION */
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", () => {
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      el.classList.add("active");
+    }
+  });
+});
+</script>
 
 </body>
 </html>
-
 
