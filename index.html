@@ -2,23 +2,21 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>DelHyperWeb — Sites web modernes & rentables</title>
+    <title>Contact — DelHyperWeb</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         body {
-            background: radial-gradient(circle at top, #0f2027, #000);
-            color: #ffffff;
+            min-height: 100vh;
+            background: radial-gradient(circle at top, #00ffff, #020214);
+            color: white;
             overflow-x: hidden;
         }
 
@@ -27,32 +25,26 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(0,0,0,0.7);
-            backdrop-filter: blur(12px);
-            z-index: 1000;
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
+            padding: 20px 60px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
         }
 
-        .logo {
-            font-size: 1.8em;
-            font-weight: 800;
+        header h1 {
             color: #00ffff;
             text-shadow: 0 0 15px #00ffff;
+            font-size: 1.8em;
         }
 
         nav a {
-            color: #fff;
-            text-decoration: none;
             margin-left: 25px;
-            font-weight: 500;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
             transition: 0.3s;
         }
 
@@ -61,113 +53,107 @@
             text-shadow: 0 0 10px #00ffff;
         }
 
-        /* ===== HERO ===== */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* ===== HERO CONTACT ===== */
+        .contact-hero {
+            padding-top: 160px;
+            padding-bottom: 100px;
             text-align: center;
-            padding: 120px 20px 60px;
+            max-width: 900px;
+            margin: auto;
         }
 
-        .hero h1 {
-            font-size: 3.8em;
-            font-weight: 800;
+        .contact-hero h2 {
+            font-size: 3.2em;
             margin-bottom: 20px;
             text-shadow: 0 0 25px #00ffff;
         }
 
-        .hero p {
-            max-width: 800px;
-            margin: auto;
+        .contact-hero p {
             font-size: 1.2em;
             opacity: 0.9;
-            line-height: 1.7;
-        }
-
-        .hero .btn {
-            display: inline-block;
-            margin-top: 40px;
-            padding: 18px 45px;
-            border-radius: 50px;
-            background: linear-gradient(135deg, #00ffff, #ff00ff);
-            color: #000;
-            font-weight: 700;
-            text-decoration: none;
-            box-shadow: 0 0 25px rgba(0,255,255,0.6);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .hero .btn:hover {
-            transform: scale(1.08);
-            box-shadow: 0 0 40px rgba(255,0,255,0.8);
-        }
-
-        /* ===== SECTIONS ===== */
-        section {
-            max-width: 1200px;
-            margin: 120px auto;
-            padding: 0 20px;
-        }
-
-        section h2 {
-            font-size: 2.6em;
-            margin-bottom: 25px;
-            text-shadow: 0 0 15px #00ffff;
-        }
-
-        section p {
-            font-size: 1.1em;
-            opacity: 0.85;
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
         /* ===== CARDS ===== */
-        .cards {
+        .contact-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 35px;
-            margin-top: 50px;
+            gap: 40px;
+            max-width: 1100px;
+            margin: 80px auto;
+            padding: 0 30px;
         }
 
         .card {
             background: rgba(0,0,0,0.55);
             border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 0 25px rgba(0,255,255,0.25);
-            transition: transform 0.4s, box-shadow 0.4s;
+            padding: 35px;
+            box-shadow: 0 0 30px rgba(0,255,255,0.25);
+            transition: 0.4s;
         }
 
         .card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 0 40px rgba(0,255,255,0.6);
+            transform: translateY(-10px);
+            box-shadow: 0 0 50px rgba(0,255,255,0.6);
         }
 
         .card h3 {
-            font-size: 1.4em;
+            font-size: 1.8em;
             margin-bottom: 15px;
             color: #00ffff;
         }
 
-        /* ===== CTA ===== */
-        .cta {
-            text-align: center;
-            padding: 100px 20px;
-            background: linear-gradient(180deg, transparent, rgba(0,255,255,0.05));
+        .card p {
+            font-size: 1.05em;
+            line-height: 1.6;
+            opacity: 0.9;
         }
 
-        .cta h2 {
-            font-size: 2.8em;
-            margin-bottom: 20px;
+        /* ===== BOUTONS ===== */
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 16px 35px;
+            border-radius: 40px;
+            font-weight: bold;
+            text-decoration: none;
+            color: black;
+            background: linear-gradient(90deg, #00ffff, #ff00ff);
+            box-shadow: 0 0 25px rgba(0,255,255,0.7);
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 40px rgba(255,0,255,0.9);
         }
 
         /* ===== FOOTER ===== */
         footer {
+            margin-top: 100px;
+            padding: 40px;
             text-align: center;
-            padding: 40px 20px;
+            background: rgba(0,0,0,0.4);
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* ===== PARTICULES ===== */
+        .dot {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            background: #00ffff;
+            border-radius: 50%;
             opacity: 0.6;
-            font-size: 0.9em;
+            animation: float 10s infinite linear;
+        }
+
+        @keyframes float {
+            from { transform: translateY(100vh); }
+            to { transform: translateY(-120vh); }
         }
     </style>
 </head>
@@ -175,67 +161,69 @@
 <body>
 
 <header>
+    <h1>DelHyperWeb</h1>
     <nav>
-        <div class="logo">DelHyperWeb</div>
-        <div>
-            <a href="index.html">Accueil</a>
-            <a href="offres.html">Offres</a>
-            <a href="express.html">Express</a>
-            <a href="contact.html">Contact</a>
-        </div>
+        <a href="index.html">Accueil</a>
+        <a href="offres.html">Offres</a>
+        <a href="express.html">Express</a>
+        <a href="contact.html">Contact</a>
     </nav>
 </header>
 
-<section class="hero">
-    <div>
-        <h1>Sites web modernes, rapides et rentables</h1>
+<section class="contact-hero">
+    <h2>Contact</h2>
+    <p>
+        Un projet web ? Une urgence ?  
+        <br>Je réponds rapidement, sans intermédiaire.
+    </p>
+</section>
+
+<section class="contact-cards">
+
+    <div class="card">
+        <h3>💬 WhatsApp direct</h3>
         <p>
-            DelHyperWeb conçoit des sites web professionnels conçus pour convertir,
-            rassurer et générer des clients. Sans abonnement. Sans publicité.
-            Paiement unique. Résultats concrets.
+            Le moyen le plus rapide.  
+            Réponse quasi immédiate.
         </p>
-        <a href="offres.html" class="btn">Voir les offres</a>
+        <a class="btn" href="https://wa.me/33783367640" target="_blank">
+            Contacter sur WhatsApp
+        </a>
     </div>
-</section>
 
-<section>
-    <h2>Pourquoi DelHyperWeb ?</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>⚡ Rapidité extrême</h3>
-            <p>Sites optimisés, chargement instantané, expérience fluide sur mobile et ordinateur.</p>
-        </div>
-        <div class="card">
-            <h3>🎯 Conversion maximale</h3>
-            <p>Design pensé pour transformer les visiteurs en clients réels.</p>
-        </div>
-        <div class="card">
-            <h3>💎 Design premium</h3>
-            <p>Effets néon, animations modernes, image professionnelle forte.</p>
-        </div>
+    <div class="card">
+        <h3>⚡ Projets urgents</h3>
+        <p>
+            Site à livrer rapidement ?  
+            Refonte express ?  
+            J’interviens sans délai.
+        </p>
     </div>
-</section>
 
-<section>
-    <h2>À qui s’adresse ce service ?</h2>
-    <div class="cards">
-        <div class="card"><p>Entrepreneurs & indépendants</p></div>
-        <div class="card"><p>Clubs de sport & associations</p></div>
-        <div class="card"><p>Artisans & commerces locaux</p></div>
-        <div class="card"><p>Projets express & refontes rapides</p></div>
+    <div class="card">
+        <h3>🚀 Collaboration</h3>
+        <p>
+            Freelance, entrepreneur ou entreprise,  
+            je construis des sites rentables et modernes.
+        </p>
     </div>
-</section>
 
-<section class="cta">
-    <h2>Un projet ? Une urgence ?</h2>
-    <p>Parlons-en dès maintenant et lançons votre site rapidement.</p>
-    <a href="contact.html" class="btn">Me contacter</a>
 </section>
 
 <footer>
-    © 2026 — DelHyperWeb • Agence web indépendante
+    <p>© 2026 — DelHyperWeb • Agence web indépendante</p>
 </footer>
+
+<!-- PARTICULES -->
+<script>
+    for(let i=0;i<40;i++){
+        let d = document.createElement("div");
+        d.className = "dot";
+        d.style.left = Math.random()*100 + "vw";
+        d.style.animationDuration = (6 + Math.random()*10) + "s";
+        document.body.appendChild(d);
+    }
+</script>
 
 </body>
 </html>
-
