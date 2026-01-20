@@ -1,280 +1,236 @@
+
+Roberto
+3:39 PM (0 minutes ago)
+to me
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Nos offres – DelHyperWeb</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Nos offres – DelHyperWeb</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- =======================
-         STYLE GLOBAL (CSS)
-    ======================== -->
-    <style>
-        /* RESET BASIQUE */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background: radial-gradient(circle at top, #00ffff, #020214 60%);
-            color: white;
-            text-align: center;
-            min-height: 100vh;
-        }
+/* ===== GLOBAL ===== */
+body {
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at top, #00ffff22, #020214);
+    color: white;
+    text-align: center;
+}
 
-        a {
-            color: #00ffff;
-            text-decoration: none;
-        }
+/* ===== NAV ===== */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        a:hover {
-            text-decoration: underline;
-        }
+nav .logo {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #00ffff;
+    text-shadow: 0 0 15px #00ffff;
+}
 
-        /* =======================
-           TITRES
-        ======================== */
-        h1 {
-            margin-top: 80px;
-            font-size: 3.5em;
-            text-shadow: 0 0 25px #00ffff;
-        }
+nav a {
+    color: white;
+    margin-left: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-        h2 {
-            font-size: 2em;
-            margin-bottom: 15px;
-            text-shadow: 0 0 15px #00ffff;
-        }
+nav a:hover {
+    color: #00ffff;
+}
 
-        h3 {
-            font-size: 1.4em;
-            margin-bottom: 10px;
-        }
+/* ===== TITRES ===== */
+h1 {
+    font-size: 3em;
+    margin-top: 80px;
+    text-shadow: 0 0 25px #00ffff;
+}
 
-        p {
-            font-size: 1.05em;
-            opacity: 0.9;
-            line-height: 1.6;
-        }
+section {
+    max-width: 1100px;
+    margin: 100px auto;
+    padding: 0 20px;
+}
 
-        /* =======================
-           SECTION GÉNÉRALE
-        ======================== */
-        section {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 25px;
-        }
+section h2 {
+    font-size: 2.4em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px #00ffff;
+}
 
-        /* =======================
-           GRILLE DES OFFRES
-        ======================== */
-        .offers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
+section p {
+    opacity: 0.9;
+    line-height: 1.6;
+}
 
-        /* =======================
-           CARTE OFFRE
-        ======================== */
-        .offer-card {
-            background: rgba(0, 0, 0, 0.55);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 0 25px rgba(0, 255, 255, 0.25);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
+/* ===== CARTES ===== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
 
-        .offer-card::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(120deg, transparent, rgba(0,255,255,0.15), transparent);
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
+.card {
+    background: rgba(0,0,0,0.55);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,255,255,0.25);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
-        .offer-card:hover::before {
-            opacity: 1;
-        }
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 0 50px rgba(0,255,255,0.6);
+}
 
-        .offer-card:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 0 40px rgba(0, 255, 255, 0.6);
-        }
+.card h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #00ffff;
+}
 
-        .price {
-            font-size: 1.6em;
-            font-weight: bold;
-            margin: 20px 0;
-            color: #00ffff;
-        }
+.price {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 20px 0;
+}
 
-        /* =======================
-           LISTE AVANTAGES
-        ======================== */
-        .features-list {
-            text-align: left;
-            margin-top: 20px;
-        }
+/* ===== BOUTONS ===== */
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 14px 30px;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #00ffff, #ff00ff);
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 0 25px rgba(0,255,255,0.7);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
-        .features-list li {
-            margin-bottom: 10px;
-            list-style: none;
-            position: relative;
-            padding-left: 25px;
-        }
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px rgba(255,0,255,0.9);
+}
 
-        .features-list li::before {
-            content: "✔";
-            position: absolute;
-            left: 0;
-            color: #00ffff;
-        }
+/* ===== EXPRESS ===== */
+#express {
+    border-top: 2px solid #00ffff;
+    padding-top: 80px;
+}
 
-        /* =======================
-           BOUTON
-        ======================== */
-        .btn {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 14px 30px;
-            border-radius: 50px;
-            background: linear-gradient(45deg, #00ffff, #6effff);
-            color: black;
-            font-weight: bold;
-            box-shadow: 0 0 25px rgba(0,255,255,0.7);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+.express-badge {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 20px;
+    background: #ff0044;
+    font-weight: bold;
+    box-shadow: 0 0 20px #ff0044;
+    margin-bottom: 20px;
+}
 
-        .btn:hover {
-            transform: scale(1.08);
-            box-shadow: 0 0 45px rgba(0,255,255,1);
-        }
-
-        /* =======================
-           SECTION BONUS
-        ======================== */
-        .bonus {
-            margin-top: 120px;
-            padding: 60px 30px;
-            background: rgba(0,0,0,0.45);
-            border-radius: 25px;
-            box-shadow: 0 0 30px rgba(0,255,255,0.3);
-        }
-
-        /* =======================
-           FOOTER
-        ======================== */
-        footer {
-            margin-top: 120px;
-            padding: 30px;
-            font-size: 0.9em;
-            opacity: 0.7;
-        }
-    </style>
+/* ===== FOOTER ===== */
+footer {
+    margin-top: 120px;
+    padding: 40px 20px;
+    opacity: 0.6;
+    font-size: 0.9em;
+}
+</style>
 </head>
 
 <body>
 
-    <!-- =======================
-         TITRE PRINCIPAL
-    ======================== -->
-    <h1>Nos offres</h1>
+<nav>
+    <div class="logo">DelHyperWeb</div>
+    <div>
+        <a href="index.html">Accueil</a>
+        <a href="offres.html">Offres</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
 
-    <!-- =======================
-         SECTION OFFRES
-    ======================== -->
-    <section>
-        <p>
-            Des solutions web modernes, rapides et pensées pour convertir.
-            Que vous soyez indépendant, entrepreneur ou entreprise.
-        </p>
+<h1>Nos offres</h1>
 
-        <div class="offers-grid">
+<!-- ===== OFFRES CLASSIQUES ===== -->
+<section>
+<h2>Sites web professionnels</h2>
+<p>Des solutions modernes, rapides et rentables.</p>
 
-            <!-- OFFRE 1 -->
-            <div class="offer-card">
-                <h2>Page de conversion</h2>
-                <p>Idéale pour vendre un service ou capter des leads.</p>
+<div class="cards">
 
-                <ul class="features-list">
-                    <li>Design impactant</li>
-                    <li>Structure optimisée conversion</li>
-                    <li>Formulaire de contact</li>
-                    <li>Responsive mobile</li>
-                </ul>
+<div class="card">
+    <h3>Page de conversion</h3>
+    <p>Idéale pour vendre un service ou capter des contacts.</p>
+    <div class="price">À partir de 300€</div>
+    <a class="btn" href="https://wa.me/33783367640">Commander</a>
+</div>
 
-                <div class="price">À partir de 300 €</div>
+<div class="card">
+    <h3>Site vitrine – Essentiel</h3>
+    <p>Présente votre activité avec un design moderne.</p>
+    <div class="price">À partir de 500€</div>
+    <a class="btn" href="https://wa.me/33783367640">Commander</a>
+</div>
 
-                <a href="#" class="btn">Commander</a>
-            </div>
+<div class="card">
+    <h3>Site vitrine – Premium</h3>
+    <p>Design haut de gamme, impact visuel maximal.</p>
+    <div class="price">À partir de 800€</div>
+    <a class="btn" href="https://wa.me/33783367640">Commander</a>
+</div>
 
-            <!-- OFFRE 2 -->
-            <div class="offer-card">
-                <h2>Site vitrine – Essentiel</h2>
-                <p>Présente votre activité de manière claire et professionnelle.</p>
+</div>
+</section>
 
-                <ul class="features-list">
-                    <li>Jusqu’à 5 pages</li>
-                    <li>Design moderne</li>
-                    <li>SEO de base</li>
-                    <li>Chargement rapide</li>
-                </ul>
+<!-- ===== OFFRES EXPRESS ===== -->
+<section id="express">
+<div class="express-badge">⚡ EXPRESS</div>
+<h2>Offres Express</h2>
+<p>Livraison ultra rapide pour les urgences.</p>
 
-                <div class="price">À partir de 500 €</div>
+<div class="cards">
 
-                <a href="#" class="btn">Commander</a>
-            </div>
+<div class="card">
+    <h3>Site Express 48h</h3>
+    <p>Site professionnel livré en 48h. Paiement unique.</p>
+    <div class="price">700€</div>
+    <a class="btn" href="https://wa.me/33783367640">WhatsApp direct</a>
+</div>
 
-            <!-- OFFRE 3 -->
-            <div class="offer-card">
-                <h2>Site vitrine – Premium</h2>
-                <p>Une image haut de gamme et un impact maximal.</p>
+<div class="card">
+    <h3>Refonte Express</h3>
+    <p>Modernisation rapide d’un site existant.</p>
+    <div class="price">400€</div>
+    <a class="btn" href="https://wa.me/33783367640">WhatsApp direct</a>
+</div>
 
-                <ul class="features-list">
-                    <li>Pages illimitées</li>
-                    <li>Animations avancées</li>
-                    <li>SEO avancé</li>
-                    <li>Accompagnement personnalisé</li>
-                </ul>
+</div>
+</section>
 
-                <div class="price">À partir de 800 €</div>
-
-                <a href="#" class="btn">Commander</a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- =======================
-         SECTION BONUS
-    ======================== -->
-    <section class="bonus">
-        <h2>Pourquoi DelHyperWeb ?</h2>
-        <p>
-            Parce que ton site doit travailler pour toi, 24h/24.
-            Design futuriste, performance, conversion.
-        </p>
-
-        <p style="margin-top:20px;">
-            👉 Travail à distance • Clients partout • Résultats concrets
-        </p>
-    </section>
-
-    <!-- =======================
-         FOOTER
-    ======================== -->
-    <footer>
-        © 2026 – DelHyperWeb • Tous droits réservés<br>
-        <a href="index.html">Retour au site</a>
-    </footer>
+<footer>
+© 2026 — DelHyperWeb • Agence web indépendante
+</footer>
 
 </body>
 </html>
