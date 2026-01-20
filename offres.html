@@ -2,49 +2,45 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Nos offres – DelHyperWeb</title>
+<title>Offres – DelHyperWeb</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* ===== RESET ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-/* ===== GLOBAL ===== */
-body {
     font-family: Arial, sans-serif;
-    background: radial-gradient(circle at top, #00ffff22, #020214);
-    color: white;
-    text-align: center;
 }
 
-/* ===== NAV ===== */
-nav {
-    position: sticky;
+body {
+    background: #020214;
+    color: #e6faff;
+}
+
+/* HEADER */
+header {
+    position: fixed;
     top: 0;
-    z-index: 100;
-    background: rgba(0,0,0,0.7);
+    width: 100%;
+    background: rgba(2,2,20,0.9);
     backdrop-filter: blur(10px);
-    padding: 20px 40px;
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-nav .logo {
-    font-size: 1.6em;
-    font-weight: bold;
-    color: #00ffff;
-    text-shadow: 0 0 15px #00ffff;
-}
-
 nav a {
-    color: white;
-    margin-left: 25px;
+    color: #e6faff;
     text-decoration: none;
+    margin-left: 20px;
     font-weight: bold;
 }
 
@@ -52,180 +48,192 @@ nav a:hover {
     color: #00ffff;
 }
 
-/* ===== TITRES ===== */
-h1 {
-    font-size: 3em;
-    margin-top: 80px;
-    text-shadow: 0 0 25px #00ffff;
+/* HERO */
+.hero {
+    min-height: 100vh;
+    padding: 140px 20px 80px;
+    text-align: center;
+    background: linear-gradient(180deg, #020214, #000814);
+    position: relative;
 }
 
+.hero h1 {
+    font-size: 3rem;
+    color: #ffffff;
+    text-shadow: 0 0 15px #00ffff, 0 0 40px rgba(0,255,255,0.6);
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 30px auto;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #e6faff;
+}
+
+/* SECTIONS */
 section {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 100px auto;
     padding: 0 20px;
 }
 
 section h2 {
-    font-size: 2.4em;
-    margin-bottom: 20px;
+    font-size: 2.4rem;
+    text-align: center;
+    margin-bottom: 40px;
     text-shadow: 0 0 15px #00ffff;
 }
 
-section p {
-    opacity: 0.9;
-    line-height: 1.6;
-}
-
-/* ===== CARTES ===== */
-.cards {
+/* OFFRES */
+.offres {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
 }
 
-.card {
+.offre {
     background: rgba(0,0,0,0.55);
-    padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 0 30px rgba(0,255,255,0.25);
-    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0,255,255,0.2);
+    transition: transform 0.4s, box-shadow 0.4s;
 }
 
-.card:hover {
-    transform: translateY(-10px) scale(1.03);
+.offre:hover {
+    transform: translateY(-10px);
     box-shadow: 0 0 50px rgba(0,255,255,0.6);
 }
 
-.card h3 {
-    font-size: 1.5em;
+.offre h3 {
+    font-size: 1.8rem;
     margin-bottom: 15px;
     color: #00ffff;
 }
 
 .price {
-    font-size: 1.8em;
-    font-weight: bold;
+    font-size: 2.2rem;
     margin: 20px 0;
 }
 
-/* ===== BOUTONS ===== */
+.offre ul {
+    list-style: none;
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+/* EXPRESS */
+.express {
+    background: linear-gradient(180deg, #000814, #020214);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.express h2 {
+    color: #ff00ff;
+    text-shadow: 0 0 20px #ff00ff;
+}
+
+.express p {
+    max-width: 700px;
+    margin: 30px auto;
+    font-size: 1.2rem;
+}
+
 .btn {
     display: inline-block;
-    margin-top: 15px;
-    padding: 14px 30px;
-    border-radius: 50px;
-    background: linear-gradient(45deg, #00ffff, #ff00ff);
-    color: black;
+    margin-top: 30px;
+    padding: 14px 32px;
+    background: linear-gradient(90deg, #00ffff, #ff00ff);
+    color: #020214;
+    border-radius: 30px;
     font-weight: bold;
     text-decoration: none;
-    box-shadow: 0 0 25px rgba(0,255,255,0.7);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 25px rgba(0,255,255,0.8);
 }
 
 .btn:hover {
-    transform: scale(1.1);
     box-shadow: 0 0 40px rgba(255,0,255,0.9);
 }
 
-/* ===== EXPRESS ===== */
-#express {
-    border-top: 2px solid #00ffff;
-    padding-top: 80px;
-}
-
-.express-badge {
-    display: inline-block;
-    padding: 8px 18px;
-    border-radius: 20px;
-    background: #ff0044;
-    font-weight: bold;
-    box-shadow: 0 0 20px #ff0044;
-    margin-bottom: 20px;
-}
-
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer {
-    margin-top: 120px;
-    padding: 40px 20px;
-    opacity: 0.6;
-    font-size: 0.9em;
+    text-align: center;
+    padding: 40px;
+    color: #9ca3af;
 }
 </style>
 </head>
 
 <body>
 
+<header>
 <nav>
-    <div class="logo">DelHyperWeb</div>
-    <div>
-        <a href="index.html">Accueil</a>
-        <a href="offres.html">Offres</a>
-        <a href="contact.html">Contact</a>
-    </div>
+<div>⚡ DelHyperWeb</div>
+<div>
+<a href="index.html">Accueil</a>
+<a href="offres.html">Offres</a>
+<a href="contact.html">Contact</a>
+</div>
 </nav>
+</header>
 
-<h1>Nos offres</h1>
+<section class="hero">
+<h1>Des offres claires, puissantes et efficaces</h1>
+<p>Choisissez la solution idéale pour développer votre activité avec un site web moderne, rapide et sans abonnement.</p>
+</section>
 
-<!-- ===== OFFRES CLASSIQUES ===== -->
 <section>
-<h2>Sites web professionnels</h2>
-<p>Des solutions modernes, rapides et rentables.</p>
+<h2>Nos offres</h2>
+<div class="offres">
 
-<div class="cards">
-
-<div class="card">
-    <h3>Page de conversion</h3>
-    <p>Idéale pour vendre un service ou capter des contacts.</p>
-    <div class="price">À partir de 300€</div>
-    <a class="btn" href="https://wa.me/33783367640">Commander</a>
+<div class="offre">
+<h3>Page de conversion</h3>
+<div class="price">300€</div>
+<ul>
+<li>1 page ultra optimisée</li>
+<li>Design moderne</li>
+<li>Appel à l’action clair</li>
+<li>Mise en ligne incluse</li>
+</ul>
 </div>
 
-<div class="card">
-    <h3>Site vitrine – Essentiel</h3>
-    <p>Présente votre activité avec un design moderne.</p>
-    <div class="price">À partir de 500€</div>
-    <a class="btn" href="https://wa.me/33783367640">Commander</a>
+<div class="offre">
+<h3>Site vitrine – Essentiel</h3>
+<div class="price">500€</div>
+<ul>
+<li>Jusqu’à 3 pages</li>
+<li>Design personnalisé</li>
+<li>Responsive mobile</li>
+<li>SEO de base</li>
+</ul>
 </div>
 
-<div class="card">
-    <h3>Site vitrine – Premium</h3>
-    <p>Design haut de gamme, impact visuel maximal.</p>
-    <div class="price">À partir de 800€</div>
-    <a class="btn" href="https://wa.me/33783367640">Commander</a>
+<div class="offre">
+<h3>Site vitrine – Premium</h3>
+<div class="price">800€</div>
+<ul>
+<li>Pages illimitées</li>
+<li>Animations & effets</li>
+<li>Performance maximale</li>
+<li>Image haut de gamme</li>
+</ul>
 </div>
 
 </div>
 </section>
 
-<!-- ===== OFFRES EXPRESS ===== -->
-<section id="express">
-<div class="express-badge">⚡ EXPRESS</div>
-<h2>Offres Express</h2>
-<p>Livraison ultra rapide pour les urgences.</p>
-
-<div class="cards">
-
-<div class="card">
-    <h3>Site Express 48h</h3>
-    <p>Site professionnel livré en 48h. Paiement unique.</p>
-    <div class="price">700€</div>
-    <a class="btn" href="https://wa.me/33783367640">WhatsApp direct</a>
-</div>
-
-<div class="card">
-    <h3>Refonte Express</h3>
-    <p>Modernisation rapide d’un site existant.</p>
-    <div class="price">400€</div>
-    <a class="btn" href="https://wa.me/33783367640">WhatsApp direct</a>
-</div>
-
-</div>
+<section class="express" id="express">
+<h2>⚡ Offre Express 48h</h2>
+<p>Besoin d’un site immédiatement ? Je livre un site professionnel prêt à l’emploi en moins de 48h.</p>
+<a class="btn" href="contact.html">Demander l’offre express</a>
 </section>
 
 <footer>
-© 2026 — DelHyperWeb • Agence web indépendante
+© 2026 – DelHyperWeb
 </footer>
 
 </body>
 </html>
+
