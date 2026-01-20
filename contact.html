@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact — DelHyperWeb</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: radial-gradient(circle at top, #00ffff, #020214);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* ===== NAVBAR ===== */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        header h1 {
+            color: #00ffff;
+            text-shadow: 0 0 15px #00ffff;
+            font-size: 1.8em;
+        }
+
+        nav a {
+            margin-left: 25px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff;
+        }
+
+        /* ===== HERO CONTACT ===== */
+        .contact-hero {
+            padding-top: 160px;
+            padding-bottom: 100px;
+            text-align: center;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .contact-hero h2 {
+            font-size: 3.2em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 25px #00ffff;
+        }
+
+        .contact-hero p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* ===== CARDS ===== */
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1100px;
+            margin: 80px auto;
+            padding: 0 30px;
+        }
+
+        .card {
+            background: rgba(0,0,0,0.55);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 0 30px rgba(0,255,255,0.25);
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 50px rgba(0,255,255,0.6);
+        }
+
+        .card h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #00ffff;
+        }
+
+        .card p {
+            font-size: 1.05em;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* ===== BOUTONS ===== */
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 16px 35px;
+            border-radius: 40px;
+            font-weight: bold;
+            text-decoration: none;
+            color: black;
+            background: linear-gradient(90deg, #00ffff, #ff00ff);
+            box-shadow: 0 0 25px rgba(0,255,255,0.7);
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 40px rgba(255,0,255,0.9);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            margin-top: 100px;
+            padding: 40px;
+            text-align: center;
+            background: rgba(0,0,0,0.4);
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* ===== PARTICULES ===== */
+        .dot {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            background: #00ffff;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: float 10s infinite linear;
+        }
+
+        @keyframes float {
+            from { transform: translateY(100vh); }
+            to { transform: translateY(-120vh); }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>DelHyperWeb</h1>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="offres.html">Offres</a>
+        <a href="express.html">Express</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="contact-hero">
+    <h2>Contact</h2>
+    <p>
+        Un projet web ? Une urgence ?  
+        <br>Je réponds rapidement, sans intermédiaire.
+    </p>
+</section>
+
+<section class="contact-cards">
+
+    <div class="card">
+        <h3>💬 WhatsApp direct</h3>
+        <p>
+            Le moyen le plus rapide.  
+            Réponse quasi immédiate.
+        </p>
+        <a class="btn" href="https://wa.me/33783367640" target="_blank">
+            Contacter sur WhatsApp
+        </a>
+    </div>
+
+    <div class="card">
+        <h3>⚡ Projets urgents</h3>
+        <p>
+            Site à livrer rapidement ?  
+            Refonte express ?  
+            J’interviens sans délai.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>🚀 Collaboration</h3>
+        <p>
+            Freelance, entrepreneur ou entreprise,  
+            je construis des sites rentables et modernes.
+        </p>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 — DelHyperWeb • Agence web indépendante</p>
+</footer>
+
+<!-- PARTICULES -->
+<script>
+    for(let i=0;i<40;i++){
+        let d = document.createElement("div");
+        d.className = "dot";
+        d.style.left = Math.random()*100 + "vw";
+        d.style.animationDuration = (6 + Math.random()*10) + "s";
+        document.body.appendChild(d);
+    }
+</script>
+
+</body>
+</html>
