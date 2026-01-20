@@ -4,72 +4,277 @@
     <meta charset="UTF-8">
     <title>Nos offres – DelHyperWeb</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- =======================
+         STYLE GLOBAL (CSS)
+    ======================== -->
     <style>
+        /* RESET BASIQUE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
+            font-family: 'Arial', sans-serif;
+            background: radial-gradient(circle at top, #00ffff, #020214 60%);
+            color: white;
+            text-align: center;
+            min-height: 100vh;
+        }
 
-            section {
-    max-width: 1000px;
-    margin: 80px auto;
-    padding: 0 20px;
-}
+        a {
+            color: #00ffff;
+            text-decoration: none;
+        }
 
-section h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    text-shadow: 0 0 15px #00ffff;
-}
+        a:hover {
+            text-decoration: underline;
+        }
 
-section p {
-    font-size: 1.1em;
-    opacity: 0.9;
-    line-height: 1.6;
-}
+        /* =======================
+           TITRES
+        ======================== */
+        h1 {
+            margin-top: 80px;
+            font-size: 3.5em;
+            text-shadow: 0 0 25px #00ffff;
+        }
 
-.features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
+        h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+            text-shadow: 0 0 15px #00ffff;
+        }
 
-.feature {
-    background: rgba(0,0,0,0.5);
-    border-radius: 15px;
-    padding: 25px;
-    box-shadow: 0 0 20px rgba(0,255,255,0.3);
-}
+        h3 {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.05em;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* =======================
+           SECTION GÉNÉRALE
+        ======================== */
+        section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 25px;
+        }
+
+        /* =======================
+           GRILLE DES OFFRES
+        ======================== */
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        /* =======================
+           CARTE OFFRE
+        ======================== */
+        .offer-card {
+            background: rgba(0, 0, 0, 0.55);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.25);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, transparent, rgba(0,255,255,0.15), transparent);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .offer-card:hover::before {
+            opacity: 1;
+        }
+
+        .offer-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.6);
+        }
+
+        .price {
+            font-size: 1.6em;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #00ffff;
+        }
+
+        /* =======================
+           LISTE AVANTAGES
+        ======================== */
+        .features-list {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .features-list li {
+            margin-bottom: 10px;
+            list-style: none;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .features-list li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: #00ffff;
+        }
+
+        /* =======================
+           BOUTON
+        ======================== */
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 14px 30px;
+            border-radius: 50px;
+            background: linear-gradient(45deg, #00ffff, #6effff);
+            color: black;
+            font-weight: bold;
+            box-shadow: 0 0 25px rgba(0,255,255,0.7);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 45px rgba(0,255,255,1);
+        }
+
+        /* =======================
+           SECTION BONUS
+        ======================== */
+        .bonus {
+            margin-top: 120px;
+            padding: 60px 30px;
+            background: rgba(0,0,0,0.45);
+            border-radius: 25px;
+            box-shadow: 0 0 30px rgba(0,255,255,0.3);
+        }
+
+        /* =======================
+           FOOTER
+        ======================== */
+        footer {
+            margin-top: 120px;
+            padding: 30px;
+            font-size: 0.9em;
+            opacity: 0.7;
         }
     </style>
-
 </head>
 
-<body> 
+<body>
 
-<h1>Nos offres</h1>
+    <!-- =======================
+         TITRE PRINCIPAL
+    ======================== -->
+    <h1>Nos offres</h1>
 
-<div class="cards">
+    <!-- =======================
+         SECTION OFFRES
+    ======================== -->
+    <section>
+        <p>
+            Des solutions web modernes, rapides et pensées pour convertir.
+            Que vous soyez indépendant, entrepreneur ou entreprise.
+        </p>
 
-    <div class="card">
-        <h2>Page de conversion</h2>
-        <p>Idéale pour vendre un service ou capter des contacts.</p>
-        <div class="price">À partir de 300 €</div>
-    </div>
+        <div class="offers-grid">
 
-    <div class="card">
-        <h2>Site vitrine – Essentiel</h2>
-        <p>Présente votre activité avec un design moderne et efficace.</p>
-        <div class="price">À partir de 500 €</div>
-    </div>
+            <!-- OFFRE 1 -->
+            <div class="offer-card">
+                <h2>Page de conversion</h2>
+                <p>Idéale pour vendre un service ou capter des leads.</p>
 
-    <div class="card">
-        <h2>Site vitrine – Premium</h2>
-        <p>Design haut de gamme, impact visuel maximal.</p>
-        <div class="price">À partir de 800 €</div>
-    </div>
+                <ul class="features-list">
+                    <li>Design impactant</li>
+                    <li>Structure optimisée conversion</li>
+                    <li>Formulaire de contact</li>
+                    <li>Responsive mobile</li>
+                </ul>
 
-</div>
+                <div class="price">À partir de 300 €</div>
 
-<a class="button" href="index.html">Retour au site</a>
+                <a href="#" class="btn">Commander</a>
+            </div>
+
+            <!-- OFFRE 2 -->
+            <div class="offer-card">
+                <h2>Site vitrine – Essentiel</h2>
+                <p>Présente votre activité de manière claire et professionnelle.</p>
+
+                <ul class="features-list">
+                    <li>Jusqu’à 5 pages</li>
+                    <li>Design moderne</li>
+                    <li>SEO de base</li>
+                    <li>Chargement rapide</li>
+                </ul>
+
+                <div class="price">À partir de 500 €</div>
+
+                <a href="#" class="btn">Commander</a>
+            </div>
+
+            <!-- OFFRE 3 -->
+            <div class="offer-card">
+                <h2>Site vitrine – Premium</h2>
+                <p>Une image haut de gamme et un impact maximal.</p>
+
+                <ul class="features-list">
+                    <li>Pages illimitées</li>
+                    <li>Animations avancées</li>
+                    <li>SEO avancé</li>
+                    <li>Accompagnement personnalisé</li>
+                </ul>
+
+                <div class="price">À partir de 800 €</div>
+
+                <a href="#" class="btn">Commander</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =======================
+         SECTION BONUS
+    ======================== -->
+    <section class="bonus">
+        <h2>Pourquoi DelHyperWeb ?</h2>
+        <p>
+            Parce que ton site doit travailler pour toi, 24h/24.
+            Design futuriste, performance, conversion.
+        </p>
+
+        <p style="margin-top:20px;">
+            👉 Travail à distance • Clients partout • Résultats concrets
+        </p>
+    </section>
+
+    <!-- =======================
+         FOOTER
+    ======================== -->
+    <footer>
+        © 2026 – DelHyperWeb • Tous droits réservés<br>
+        <a href="index.html">Retour au site</a>
+    </footer>
 
 </body>
 </html>
