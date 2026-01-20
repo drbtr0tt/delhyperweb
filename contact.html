@@ -6,191 +6,72 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    background: radial-gradient(circle at top, #00ffff22, #020214);
-    color: white;
+    background: #020214;
+    color: #e6faff;
 }
 
-/* ===== NAV ===== */
-nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(10px);
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav .logo {
-    font-size: 1.6em;
-    font-weight: bold;
-    color: #00ffff;
-    text-shadow: 0 0 15px #00ffff;
-}
-
-nav a {
-    color: white;
-    margin-left: 25px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #00ffff;
-}
-
-/* ===== HERO ===== */
+/* HERO */
 .hero {
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    min-height: 100vh;
+    padding: 140px 20px;
     text-align: center;
-    padding: 40px 20px;
+    background: linear-gradient(180deg, #020214, #000814);
 }
 
 .hero h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-    text-shadow: 0 0 30px #00ffff;
-}
-
-.hero p {
-    font-size: 1.2em;
-    opacity: 0.9;
-    max-width: 700px;
-    margin: auto;
-}
-
-/* ===== BOUTON ===== */
-.btn {
-    display: inline-block;
-    margin-top: 40px;
-    padding: 18px 45px;
-    border-radius: 50px;
-    background: linear-gradient(45deg, #00ffff, #ff00ff);
-    color: black;
-    font-weight: bold;
-    font-size: 1.1em;
-    text-decoration: none;
-    box-shadow: 0 0 30px rgba(0,255,255,0.8);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.btn:hover {
-    transform: scale(1.15);
-    box-shadow: 0 0 50px rgba(255,0,255,1);
-}
-
-/* ===== SECTIONS ===== */
-section {
-    max-width: 1000px;
-    margin: 120px auto;
-    padding: 0 20px;
-    text-align: center;
-}
-
-section h2 {
-    font-size: 2.4em;
-    margin-bottom: 20px;
+    font-size: 3rem;
+    color: #ffffff;
     text-shadow: 0 0 20px #00ffff;
 }
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
+.hero p {
+    max-width: 600px;
+    margin: 30px auto;
+    font-size: 1.2rem;
+}
+
+/* CONTACT BOX */
+.contact-box {
     margin-top: 50px;
-}
-
-.card {
+    display: inline-block;
     background: rgba(0,0,0,0.6);
-    padding: 30px;
+    padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 0 25px rgba(0,255,255,0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 30px rgba(0,255,255,0.4);
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 45px rgba(0,255,255,0.6);
+.contact-box a {
+    display: block;
+    margin-top: 25px;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #00ffff, #00ff88);
+    color: #020214;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 0 25px rgba(0,255,255,0.8);
 }
 
-.card h3 {
-    color: #00ffff;
-    margin-bottom: 15px;
-}
-
-/* ===== FOOTER ===== */
-footer {
-    text-align: center;
-    padding: 50px 20px;
-    opacity: 0.6;
+.contact-box a:hover {
+    box-shadow: 0 0 40px rgba(0,255,255,1);
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-    <div class="logo">DelHyperWeb</div>
-    <div>
-        <a href="index.html">Accueil</a>
-        <a href="offres.html">Offres</a>
-        <a href="contact.html">Contact</a>
-    </div>
-</nav>
+<section class="hero">
+<h1>Contactez DelHyperWeb</h1>
+<p>Un projet ? Une idée ? Discutons-en directement.</p>
 
-<div class="hero">
-    <div>
-        <h1>Parlons de votre projet</h1>
-        <p>
-            Un site web ? Une urgence ? Une idée à transformer en business ?
-            Je réponds rapidement et je livre efficacement.
-        </p>
-
-        <a class="btn" href="https://wa.me/33783367640">
-            WhatsApp direct
-        </a>
-    </div>
-</div>
-
-<section>
-<h2>Pourquoi me contacter ?</h2>
-
-<div class="cards">
-
-<div class="card">
-    <h3>Réponse rapide</h3>
-    <p>Contact direct sans intermédiaire. Discussion claire.</p>
-</div>
-
-<div class="card">
-    <h3>Solutions concrètes</h3>
-    <p>Pas de blabla, des sites qui rapportent.</p>
-</div>
-
-<div class="card">
-    <h3>Offres express</h3>
-    <p>Livraison possible en 48h selon projet.</p>
-</div>
-
+<div class="contact-box">
+<p>📞 07 83 36 76 40</p>
+<a href="https://wa.me/33783367640">Discuter sur WhatsApp</a>
 </div>
 </section>
-
-<footer>
-© 2026 — DelHyperWeb • Agence web indépendante
-</footer>
 
 </body>
 </html>
