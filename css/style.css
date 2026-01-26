@@ -1,20 +1,167 @@
-body {
-  background: #020617;
-  color: white;
-  font-family: Arial, sans-serif;
-}
-/* Animation simple WOW */
-h1 {
-  animation: fadeUp 1.2s ease forwards;
+/* RESET & GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+body {
+    background: radial-gradient(circle at top, #0f2027, #000);
+    color: #fff;
+    overflow-x: hidden;
+    perspective: 1500px; /* pour les effets 3D */
+}
+
+/* HEADER */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 2em;
+    font-weight: 800;
+    color: #00ffff;
+    text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+    transition: transform 0.3s;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+nav a:hover {
+    color: #00ffff;
+    text-shadow: 0 0 15px #00ffff;
+}
+
+/* HERO */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 140px 20px 80px;
+    overflow: hidden;
+    perspective: 1500px;
+}
+
+.hero h1 {
+    font-size: 4em;
+    font-weight: 800;
+    text-shadow: 0 0 25px #00ffff, 0 0 50px #ff00ff;
+    transform-style: preserve-3d;
+}
+
+.hero p {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 1.3em;
+    opacity: 0.9;
+    line-height: 1.7;
+}
+
+/* BTN */
+.btn {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 18px 45px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #00ffff, #ff00ff);
+    color: #000;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 0 30px rgba(0,255,255,0.6), 0 0 60px rgba(255,0,255,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1) rotateY(5deg);
+    box-shadow: 0 0 60px rgba(0,255,255,0.8), 0 0 120px rgba(255,0,255,0.7);
+}
+
+/* SECTIONS */
+section {
+    max-width: 1200px;
+    margin: 150px auto;
+    padding: 0 20px;
+    perspective: 1500px;
+}
+
+section h2 {
+    font-size: 2.8em;
+    margin-bottom: 25px;
+    text-shadow: 0 0 25px #00ffff, 0 0 50px #ff00ff;
+    text-align: center;
+    transform-style: preserve-3d;
+}
+
+section p {
+    font-size: 1.1em;
+    opacity: 0.85;
+    line-height: 1.7;
+    text-align: center;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+    margin-top: 50px;
+    perspective: 1500px;
+}
+
+.card {
+    background: rgba(0,0,0,0.55);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 0 25px rgba(0,255,255,0.25);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    transform-style: preserve-3d;
+}
+
+.card:hover {
+    transform: rotateY(10deg) translateY(-15px);
+    box-shadow: 0 0 50px rgba(0,255,255,0.8), 0 0 80px rgba(255,0,255,0.5);
+}
+
+.card h3 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    color: #00ffff;
+}
+
+/* CTA */
+.cta {
+    text-align: center;
+    padding: 120px 20px;
+    background: linear-gradient(180deg, transparent, rgba(0,255,255,0.05));
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    opacity: 0.6;
+    font-size: 0.9em;
+}
+
+/* ANIMATION GÉNÉRALE AU SURVOL DE SOURIS */
+body:hover .split .word {
+    transform: rotateY(calc((var(--mx,0) - 0.5)*20deg)) rotateX(calc((var(--my,0) - 0.5)*20deg));
+    transition: transform 0.2s ease-out;
 }
