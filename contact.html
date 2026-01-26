@@ -2,77 +2,80 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Contact – DelHyperWeb</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact – DelHyperWeb</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #020214;
-    color: #e6faff;
-}
-
-/* HERO */
-.hero {
-    min-height: 100vh;
-    padding: 140px 20px;
-    text-align: center;
-    background: linear-gradient(180deg, #020214, #000814);
-}
-
-.hero h1 {
-    font-size: 3rem;
-    color: #ffffff;
-    text-shadow: 0 0 20px #00ffff;
-}
-
-.hero p {
-    max-width: 600px;
-    margin: 30px auto;
-    font-size: 1.2rem;
-}
-
-/* CONTACT BOX */
-.contact-box {
-    margin-top: 50px;
-    display: inline-block;
-    background: rgba(0,0,0,0.6);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgba(0,255,255,0.4);
-}
-
-.contact-box a {
-    display: block;
-    margin-top: 25px;
-    padding: 15px 30px;
-    background: linear-gradient(90deg, #00ffff, #00ff88);
-    color: #020214;
-    border-radius: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    box-shadow: 0 0 25px rgba(0,255,255,0.8);
-}
-
-.contact-box a:hover {
-    box-shadow: 0 0 40px rgba(0,255,255,1);
-}
-</style>
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/split-type"></script>
+<script src="https://unpkg.com/lenis@1.0.42/dist/lenis.min.js"></script>
 </head>
-
 <body>
 
-<section class="hero">
-<h1>Contactez DelHyperWeb</h1>
-<p>Un projet ? Une idée ? Discutons-en directement.</p>
+<header>
+<h1 class="logo">DelHyperWeb</h1>
+<nav>
+<a href="index.html">Accueil</a>
+<a href="offres.html">Offres</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
 
-<div class="contact-box">
+<main id="smooth-wrapper">
+<div id="smooth-content">
+
+<section class="hero">
+<h1 class="split">Contactez DelHyperWeb</h1>
+<p class="split">Un projet ? Une idée ? Discutons-en directement.</p>
+<div class="cards">
+<div class="card split">
 <p>📞 07 83 36 76 40</p>
-<a href="https://wa.me/33783367640">Discuter sur WhatsApp</a>
+<a href="https://wa.me/33783367640" class="btn split">Discuter sur WhatsApp</a>
+</div>
 </div>
 </section>
 
+<footer>
+© 2026 — DelHyperWeb
+</footer>
+
+</div>
+</main>
+
+<script>
+/* Smooth scroll */
+const lenis = new Lenis({ duration: 1.3, smooth:true });
+function raf(t){lenis.raf(t);requestAnimationFrame(raf);}
+requestAnimationFrame(raf);
+
+/* Animations interactives */
+gsap.registerPlugin(ScrollTrigger);
+document.querySelectorAll(".split").forEach(el=>new SplitType(el,{types:"words"}));
+
+gsap.from(".hero .word",{y:150,opacity:0,stagger:0.06,duration:1.5,ease:"power4.out"});
+gsap.from(".btn",{scale:0.8,opacity:0,duration:1,delay:1.2,ease:"elastic.out(1,0.5)"});
+
+document.querySelectorAll("section").forEach(sec=>{
+    const words = sec.querySelectorAll(".word");
+    gsap.from(words,{y:80,opacity:0,stagger:0.05,duration:1.2,ease:"power3.out",scrollTrigger:{trigger:sec,start:"top 85%"}});
+});
+
+document.querySelectorAll(".card").forEach(card=>{
+    gsap.from(card,{y:50,opacity:0,scale:0.95,rotationY:10,duration:1,stagger:0.1,scrollTrigger:{trigger:card,start:"top 90%"}});
+});
+
+/* Interaction souris */
+document.addEventListener("mousemove",e=>{
+    const mx = e.clientX/window.innerWidth;
+    const my = e.clientY/window.innerHeight;
+    document.querySelectorAll(".split .word").forEach(w=>{
+        w.style.setProperty("--mx",mx);
+        w.style.setProperty("--my",my);
+    });
+});
+</script>
+
 </body>
 </html>
-
