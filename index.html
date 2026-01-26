@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DelHyperWeb — Sites web rapides & rentables</title>
-
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
@@ -14,57 +12,56 @@
 <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/split-type"></script>
 <script src="https://unpkg.com/lenis@1.0.42/dist/lenis.min.js"></script>
-
 </head>
 <body>
 
 <header>
-    <h1 class="logo">DelHyperWeb</h1>
-    <nav>
-        <a href="index.html">Accueil</a>
-        <a href="offres.html">Offres</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+<h1 class="logo">DelHyperWeb</h1>
+<nav>
+<a href="index.html">Accueil</a>
+<a href="offres.html">Offres</a>
+<a href="contact.html">Contact</a>
+</nav>
 </header>
 
 <main id="smooth-wrapper">
 <div id="smooth-content">
 
 <section class="hero">
-    <div>
-        <h1 class="split">Création de site web sans abonnement, rapides et rentables</h1>
-        <p class="split">
-            DelHyperWeb conçoit des sites web professionnels conçus pour convertir, rassurer et générer des clients. Sans abonnement. Sans publicité. Paiement unique. Résultats concrets.
-        </p>
-        <a href="offres.html" class="btn split">Voir les offres</a>
-    </div>
+<div>
+<h1 class="split">Création de site web sans abonnement, rapides et rentables</h1>
+<p class="split">
+DelHyperWeb conçoit des sites web professionnels conçus pour convertir, rassurer et générer des clients. Sans abonnement. Sans publicité. Paiement unique. Résultats concrets.
+</p>
+<a href="offres.html" class="btn split">Voir les offres</a>
+</div>
 </section>
 
 <section class="why">
 <h2 class="split">Pourquoi DelHyperWeb ?</h2>
 <div class="cards">
-    <div class="card split">
-        <h3>⚡ Rapidité extrême</h3>
-        <p>Sites optimisés, chargement instantané, expérience fluide sur mobile et ordinateur.</p>
-    </div>
-    <div class="card split">
-        <h3>🎯 Conversion maximale</h3>
-        <p>Design pensé pour transformer les visiteurs en clients réels.</p>
-    </div>
-    <div class="card split">
-        <h3>💎 Design premium</h3>
-        <p>Effets néon, animations modernes, image professionnelle forte.</p>
-    </div>
+<div class="card split">
+<h3>⚡ Rapidité extrême</h3>
+<p>Sites optimisés, chargement instantané, expérience fluide sur mobile et ordinateur.</p>
+</div>
+<div class="card split">
+<h3>🎯 Conversion maximale</h3>
+<p>Design pensé pour transformer les visiteurs en clients réels.</p>
+</div>
+<div class="card split">
+<h3>💎 Design premium</h3>
+<p>Effets néon, animations modernes, image professionnelle forte.</p>
+</div>
 </div>
 </section>
 
 <section class="audience">
 <h2 class="split">À qui s’adresse ce service ?</h2>
 <div class="cards">
-    <div class="card split"><p>Entrepreneurs & indépendants</p></div>
-    <div class="card split"><p>Clubs de sport & associations</p></div>
-    <div class="card split"><p>Artisans & commerces locaux</p></div>
-    <div class="card split"><p>Projets express & refontes rapides</p></div>
+<div class="card split"><p>Entrepreneurs & indépendants</p></div>
+<div class="card split"><p>Clubs de sport & associations</p></div>
+<div class="card split"><p>Artisans & commerces locaux</p></div>
+<div class="card split"><p>Projets express & refontes rapides</p></div>
 </div>
 </section>
 
@@ -81,42 +78,41 @@
 </div>
 </main>
 
-<!-- Smooth scroll + animations -->
 <script>
-/* === Smooth scroll === */
+/* === Scroll fluide === */
 const lenis = new Lenis({ duration: 1.3, smooth: true, smoothTouch: true });
 function raf(time){ lenis.raf(time); requestAnimationFrame(raf); }
 requestAnimationFrame(raf);
 
-/* === Animations GSAP === */
+/* === Animations interactives GSAP === */
 gsap.registerPlugin(ScrollTrigger);
 document.querySelectorAll(".split").forEach(el => new SplitType(el,{types:"words"}));
 
-/* HERO animations */
-gsap.from(".hero .word", {y:120, opacity:0, stagger:0.06, duration:1.4, ease:"power4.out"});
-gsap.from(".hero .btn", {scale:0.8, opacity:0, duration:1, delay:1.2, ease:"elastic.out(1,0.5)"});
+/* HERO : apparition mots et bouton */
+gsap.from(".hero .word",{y:150, opacity:0, stagger:0.06, duration:1.5, ease:"power4.out"});
+gsap.from(".hero .btn",{scale:0.8, opacity:0, duration:1, delay:1.2, ease:"elastic.out(1,0.5)"});
 
-/* Sections animations */
+/* Sections : apparition mots et carte 3D au scroll */
 document.querySelectorAll("section").forEach(sec=>{
     const words = sec.querySelectorAll(".word");
-    gsap.from(words,{
-        y:80,
-        opacity:0,
-        stagger:0.05,
-        duration:1.2,
-        ease:"power3.out",
-        scrollTrigger:{trigger:sec,start:"top 80%"}
-    });
+    gsap.from(words,{y:80, opacity:0, stagger:0.05, duration:1.2, ease:"power3.out", scrollTrigger:{trigger:sec,start:"top 85%"}});
+});
+document.querySelectorAll(".card").forEach(card=>{
+    gsap.from(card,{y:50, opacity:0, scale:0.95, rotationY:10, duration:1, stagger:0.1, scrollTrigger:{trigger:card,start:"top 90%"}});
 });
 
-/* Cards pop */
-document.querySelectorAll(".card").forEach(card=>{
-    gsap.from(card,{y:50, opacity:0, scale:0.95, duration:1, stagger:0.1,
-        scrollTrigger:{trigger:card,start:"top 90%"}
+/* Interaction souris HERO */
+document.addEventListener("mousemove", e=>{
+    const mx = e.clientX / window.innerWidth;
+    const my = e.clientY / window.innerHeight;
+    document.querySelectorAll(".split .word").forEach(w=>{
+        w.style.setProperty("--mx", mx);
+        w.style.setProperty("--my", my);
     });
 });
 </script>
 
 </body>
 </html>
+
 
